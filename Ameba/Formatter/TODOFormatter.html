@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/veelenga/ameba">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Ameba::Formatter::TODOFormatter - github.com/veelenga/ameba</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/veelenga/ameba/Ameba" data-name="ameba">
+      <a href="../../Ameba.html">Ameba</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/AST" data-name="ameba::ast">
+      <a href="../../Ameba/AST.html">AST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Argument" data-name="ameba::ast::argument">
+      <a href="../../Ameba/AST/Argument.html">Argument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Assignment" data-name="ameba::ast::assignment">
+      <a href="../../Ameba/AST/Assignment.html">Assignment</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/BaseVisitor" data-name="ameba::ast::basevisitor">
+      <a href="../../Ameba/AST/BaseVisitor.html">BaseVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Branch" data-name="ameba::ast::branch">
+      <a href="../../Ameba/AST/Branch.html">Branch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Branchable" data-name="ameba::ast::branchable">
+      <a href="../../Ameba/AST/Branchable.html">Branchable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/NodeVisitor" data-name="ameba::ast::nodevisitor">
+      <a href="../../Ameba/AST/NodeVisitor.html">NodeVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Reference" data-name="ameba::ast::reference">
+      <a href="../../Ameba/AST/Reference.html">Reference</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Scope" data-name="ameba::ast::scope">
+      <a href="../../Ameba/AST/Scope.html">Scope</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/ScopeVisitor" data-name="ameba::ast::scopevisitor">
+      <a href="../../Ameba/AST/ScopeVisitor.html">ScopeVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Util" data-name="ameba::ast::util">
+      <a href="../../Ameba/AST/Util.html">Util</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Variable" data-name="ameba::ast::variable">
+      <a href="../../Ameba/AST/Variable.html">Variable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Config" data-name="ameba::config">
+      <a href="../../Ameba/Config.html">Config</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/veelenga/ameba/Ameba/Formatter" data-name="ameba::formatter">
+      <a href="../../Ameba/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/BaseFormatter" data-name="ameba::formatter::baseformatter">
+      <a href="../../Ameba/Formatter/BaseFormatter.html">BaseFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/DisabledFormatter" data-name="ameba::formatter::disabledformatter">
+      <a href="../../Ameba/Formatter/DisabledFormatter.html">DisabledFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/DotFormatter" data-name="ameba::formatter::dotformatter">
+      <a href="../../Ameba/Formatter/DotFormatter.html">DotFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/FlycheckFormatter" data-name="ameba::formatter::flycheckformatter">
+      <a href="../../Ameba/Formatter/FlycheckFormatter.html">FlycheckFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/JSONFormatter" data-name="ameba::formatter::jsonformatter">
+      <a href="../../Ameba/Formatter/JSONFormatter.html">JSONFormatter</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/veelenga/ameba/Ameba/Formatter/TODOFormatter" data-name="ameba::formatter::todoformatter">
+      <a href="../../Ameba/Formatter/TODOFormatter.html">TODOFormatter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/InlineComments" data-name="ameba::inlinecomments">
+      <a href="../../Ameba/InlineComments.html">InlineComments</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Rule" data-name="ameba::rule">
+      <a href="../../Ameba/Rule.html">Rule</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/Base" data-name="ameba::rule::base">
+      <a href="../../Ameba/Rule/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ComparisonToBoolean" data-name="ameba::rule::comparisontoboolean">
+      <a href="../../Ameba/Rule/ComparisonToBoolean.html">ComparisonToBoolean</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ConstantNames" data-name="ameba::rule::constantnames">
+      <a href="../../Ameba/Rule/ConstantNames.html">ConstantNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/DebuggerStatement" data-name="ameba::rule::debuggerstatement">
+      <a href="../../Ameba/Rule/DebuggerStatement.html">DebuggerStatement</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/EmptyEnsure" data-name="ameba::rule::emptyensure">
+      <a href="../../Ameba/Rule/EmptyEnsure.html">EmptyEnsure</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/EmptyExpression" data-name="ameba::rule::emptyexpression">
+      <a href="../../Ameba/Rule/EmptyExpression.html">EmptyExpression</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/HashDuplicatedKey" data-name="ameba::rule::hashduplicatedkey">
+      <a href="../../Ameba/Rule/HashDuplicatedKey.html">HashDuplicatedKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LargeNumbers" data-name="ameba::rule::largenumbers">
+      <a href="../../Ameba/Rule/LargeNumbers.html">LargeNumbers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LineLength" data-name="ameba::rule::linelength">
+      <a href="../../Ameba/Rule/LineLength.html">LineLength</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LiteralInCondition" data-name="ameba::rule::literalincondition">
+      <a href="../../Ameba/Rule/LiteralInCondition.html">LiteralInCondition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LiteralInInterpolation" data-name="ameba::rule::literalininterpolation">
+      <a href="../../Ameba/Rule/LiteralInInterpolation.html">LiteralInInterpolation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/MethodNames" data-name="ameba::rule::methodnames">
+      <a href="../../Ameba/Rule/MethodNames.html">MethodNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/NegatedConditionsInUnless" data-name="ameba::rule::negatedconditionsinunless">
+      <a href="../../Ameba/Rule/NegatedConditionsInUnless.html">NegatedConditionsInUnless</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/PercentArrays" data-name="ameba::rule::percentarrays">
+      <a href="../../Ameba/Rule/PercentArrays.html">PercentArrays</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/PredicateName" data-name="ameba::rule::predicatename">
+      <a href="../../Ameba/Rule/PredicateName.html">PredicateName</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/RandZero" data-name="ameba::rule::randzero">
+      <a href="../../Ameba/Rule/RandZero.html">RandZero</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/RedundantBegin" data-name="ameba::rule::redundantbegin">
+      <a href="../../Ameba/Rule/RedundantBegin.html">RedundantBegin</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ShadowedException" data-name="ameba::rule::shadowedexception">
+      <a href="../../Ameba/Rule/ShadowedException.html">ShadowedException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/Syntax" data-name="ameba::rule::syntax">
+      <a href="../../Ameba/Rule/Syntax.html">Syntax</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TrailingBlankLines" data-name="ameba::rule::trailingblanklines">
+      <a href="../../Ameba/Rule/TrailingBlankLines.html">TrailingBlankLines</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TrailingWhitespace" data-name="ameba::rule::trailingwhitespace">
+      <a href="../../Ameba/Rule/TrailingWhitespace.html">TrailingWhitespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TypeNames" data-name="ameba::rule::typenames">
+      <a href="../../Ameba/Rule/TypeNames.html">TypeNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnlessElse" data-name="ameba::rule::unlesselse">
+      <a href="../../Ameba/Rule/UnlessElse.html">UnlessElse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnneededDisableDirective" data-name="ameba::rule::unneededdisabledirective">
+      <a href="../../Ameba/Rule/UnneededDisableDirective.html">UnneededDisableDirective</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnusedArgument" data-name="ameba::rule::unusedargument">
+      <a href="../../Ameba/Rule/UnusedArgument.html">UnusedArgument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UselessAssign" data-name="ameba::rule::uselessassign">
+      <a href="../../Ameba/Rule/UselessAssign.html">UselessAssign</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UselessConditionInWhen" data-name="ameba::rule::uselessconditioninwhen">
+      <a href="../../Ameba/Rule/UselessConditionInWhen.html">UselessConditionInWhen</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/VariableNames" data-name="ameba::rule::variablenames">
+      <a href="../../Ameba/Rule/VariableNames.html">VariableNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/WhileTrue" data-name="ameba::rule::whiletrue">
+      <a href="../../Ameba/Rule/WhileTrue.html">WhileTrue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Runner" data-name="ameba::runner">
+      <a href="../../Ameba/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Source" data-name="ameba::source">
+      <a href="../../Ameba/Source.html">Source</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Source/Error" data-name="ameba::source::error">
+      <a href="../../Ameba/Source/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Tokenizer" data-name="ameba::tokenizer">
+      <a href="../../Ameba/Tokenizer.html">Tokenizer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Crystal" data-name="crystal">
+      <a href="../../Crystal.html">Crystal</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Crystal/Case" data-name="crystal::case">
+      <a href="../../Crystal/Case.html">Case</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Ameba::Formatter::TODOFormatter
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Ameba/Formatter/TODOFormatter.html">Ameba::Formatter::TODOFormatter</a></li><li class="superclass"><a href="../../Ameba/Formatter/DotFormatter.html">Ameba::Formatter::DotFormatter</a></li><li class="superclass"><a href="../../Ameba/Formatter/BaseFormatter.html">Ameba::Formatter::BaseFormatter</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A formatter that creates a todo config.
+Basically, it takes all errors reported and disables corresponding rules
+or excludes failed sources from these rules.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/formatter/todo_formatter.cr#L5" target="_blank">ameba/formatter/todo_formatter.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28output%3DSTDOUT%2Cio%3DFile.new%28Config%3A%3APATH%2Cmode%3A%26quot%3Bw%26quot%3B%29%29-class-method" class="signature"><strong>.new</strong>(output = <span class="t">STDOUT</span>, io = <span class="t">File</span>.<span class="k">new</span>(<span class="t">Config</span><span class="t">::</span><span class="t">PATH</span>, mode: <span class="s">&quot;w&quot;</span>))</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#finished%28sources%29-instance-method" class="signature"><strong>#finished</strong>(sources)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Ameba/Formatter/DotFormatter.html">Ameba::Formatter::DotFormatter</a></code></h3>
+  
+  
+    <a href="../../Ameba/Formatter/DotFormatter.html#finished%28sources%29-instance-method" class="tooltip">
+      <span>finished(sources)</span>
+    finished</a>, 
+    
+  
+    <a href="../../Ameba/Formatter/DotFormatter.html#source_finished%28source%3ASource%29-instance-method" class="tooltip">
+      <span>source_finished(source : Source)</span>
+    source_finished</a>, 
+    
+  
+    <a href="../../Ameba/Formatter/DotFormatter.html#started%28sources%29-instance-method" class="tooltip">
+      <span>started(sources)</span>
+    started</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Ameba/Formatter/BaseFormatter.html">Ameba::Formatter::BaseFormatter</a></code></h3>
+  
+  
+    <a href="../../Ameba/Formatter/BaseFormatter.html#finished%28sources%29-instance-method" class="tooltip">
+      <span>finished(sources)</span>
+    finished</a>, 
+    
+  
+    <a href="../../Ameba/Formatter/BaseFormatter.html#output%3AIO%3A%3AFileDescriptor%7CIO%3A%3AMemory-instance-method" class="tooltip">
+      <span>output : IO::FileDescriptor | IO::Memory</span>
+    output</a>, 
+    
+  
+    <a href="../../Ameba/Formatter/BaseFormatter.html#source_finished%28source%3ASource%29-instance-method" class="tooltip">
+      <span>source_finished(source : Source)</span>
+    source_finished</a>, 
+    
+  
+    <a href="../../Ameba/Formatter/BaseFormatter.html#source_started%28source%3ASource%29-instance-method" class="tooltip">
+      <span>source_started(source : Source)</span>
+    source_started</a>, 
+    
+  
+    <a href="../../Ameba/Formatter/BaseFormatter.html#started%28sources%29-instance-method" class="tooltip">
+      <span>started(sources)</span>
+    started</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../Ameba/Formatter/BaseFormatter.html">Ameba::Formatter::BaseFormatter</a></code></h3>
+  
+  
+    <a href="../../Ameba/Formatter/BaseFormatter.html#new%28output%3DSTDOUT%29-class-method" class="tooltip">
+      <span>new(output = <span class="t">STDOUT</span>)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(output=STDOUT,io=File.new(Config::PATH,mode:&amp;quot;w&amp;quot;))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(output = <span class="t">STDOUT</span>, io = <span class="t">File</span>.<span class="k">new</span>(<span class="t">Config</span><span class="t">::</span><span class="t">PATH</span>, mode: <span class="s">&quot;w&quot;</span>))
+
+        <a class="method-permalink" href="#new%28output%3DSTDOUT%2Cio%3DFile.new%28Config%3A%3APATH%2Cmode%3A%26quot%3Bw%26quot%3B%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/formatter/todo_formatter.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="finished(sources)-instance-method">
+      <div class="signature">
+        
+        def <strong>finished</strong>(sources)
+
+        <a class="method-permalink" href="#finished%28sources%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/formatter/todo_formatter.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

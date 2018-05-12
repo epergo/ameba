@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/veelenga/ameba">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Ameba::AST::Branchable - github.com/veelenga/ameba</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/veelenga/ameba/Ameba" data-name="ameba">
+      <a href="../../Ameba.html">Ameba</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/veelenga/ameba/Ameba/AST" data-name="ameba::ast">
+      <a href="../../Ameba/AST.html">AST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Argument" data-name="ameba::ast::argument">
+      <a href="../../Ameba/AST/Argument.html">Argument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Assignment" data-name="ameba::ast::assignment">
+      <a href="../../Ameba/AST/Assignment.html">Assignment</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/BaseVisitor" data-name="ameba::ast::basevisitor">
+      <a href="../../Ameba/AST/BaseVisitor.html">BaseVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Branch" data-name="ameba::ast::branch">
+      <a href="../../Ameba/AST/Branch.html">Branch</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/veelenga/ameba/Ameba/AST/Branchable" data-name="ameba::ast::branchable">
+      <a href="../../Ameba/AST/Branchable.html">Branchable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/NodeVisitor" data-name="ameba::ast::nodevisitor">
+      <a href="../../Ameba/AST/NodeVisitor.html">NodeVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Reference" data-name="ameba::ast::reference">
+      <a href="../../Ameba/AST/Reference.html">Reference</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Scope" data-name="ameba::ast::scope">
+      <a href="../../Ameba/AST/Scope.html">Scope</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/ScopeVisitor" data-name="ameba::ast::scopevisitor">
+      <a href="../../Ameba/AST/ScopeVisitor.html">ScopeVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Util" data-name="ameba::ast::util">
+      <a href="../../Ameba/AST/Util.html">Util</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Variable" data-name="ameba::ast::variable">
+      <a href="../../Ameba/AST/Variable.html">Variable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Config" data-name="ameba::config">
+      <a href="../../Ameba/Config.html">Config</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Formatter" data-name="ameba::formatter">
+      <a href="../../Ameba/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/BaseFormatter" data-name="ameba::formatter::baseformatter">
+      <a href="../../Ameba/Formatter/BaseFormatter.html">BaseFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/DisabledFormatter" data-name="ameba::formatter::disabledformatter">
+      <a href="../../Ameba/Formatter/DisabledFormatter.html">DisabledFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/DotFormatter" data-name="ameba::formatter::dotformatter">
+      <a href="../../Ameba/Formatter/DotFormatter.html">DotFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/FlycheckFormatter" data-name="ameba::formatter::flycheckformatter">
+      <a href="../../Ameba/Formatter/FlycheckFormatter.html">FlycheckFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/JSONFormatter" data-name="ameba::formatter::jsonformatter">
+      <a href="../../Ameba/Formatter/JSONFormatter.html">JSONFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/TODOFormatter" data-name="ameba::formatter::todoformatter">
+      <a href="../../Ameba/Formatter/TODOFormatter.html">TODOFormatter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/InlineComments" data-name="ameba::inlinecomments">
+      <a href="../../Ameba/InlineComments.html">InlineComments</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Rule" data-name="ameba::rule">
+      <a href="../../Ameba/Rule.html">Rule</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/Base" data-name="ameba::rule::base">
+      <a href="../../Ameba/Rule/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ComparisonToBoolean" data-name="ameba::rule::comparisontoboolean">
+      <a href="../../Ameba/Rule/ComparisonToBoolean.html">ComparisonToBoolean</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ConstantNames" data-name="ameba::rule::constantnames">
+      <a href="../../Ameba/Rule/ConstantNames.html">ConstantNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/DebuggerStatement" data-name="ameba::rule::debuggerstatement">
+      <a href="../../Ameba/Rule/DebuggerStatement.html">DebuggerStatement</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/EmptyEnsure" data-name="ameba::rule::emptyensure">
+      <a href="../../Ameba/Rule/EmptyEnsure.html">EmptyEnsure</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/EmptyExpression" data-name="ameba::rule::emptyexpression">
+      <a href="../../Ameba/Rule/EmptyExpression.html">EmptyExpression</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/HashDuplicatedKey" data-name="ameba::rule::hashduplicatedkey">
+      <a href="../../Ameba/Rule/HashDuplicatedKey.html">HashDuplicatedKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LargeNumbers" data-name="ameba::rule::largenumbers">
+      <a href="../../Ameba/Rule/LargeNumbers.html">LargeNumbers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LineLength" data-name="ameba::rule::linelength">
+      <a href="../../Ameba/Rule/LineLength.html">LineLength</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LiteralInCondition" data-name="ameba::rule::literalincondition">
+      <a href="../../Ameba/Rule/LiteralInCondition.html">LiteralInCondition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LiteralInInterpolation" data-name="ameba::rule::literalininterpolation">
+      <a href="../../Ameba/Rule/LiteralInInterpolation.html">LiteralInInterpolation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/MethodNames" data-name="ameba::rule::methodnames">
+      <a href="../../Ameba/Rule/MethodNames.html">MethodNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/NegatedConditionsInUnless" data-name="ameba::rule::negatedconditionsinunless">
+      <a href="../../Ameba/Rule/NegatedConditionsInUnless.html">NegatedConditionsInUnless</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/PercentArrays" data-name="ameba::rule::percentarrays">
+      <a href="../../Ameba/Rule/PercentArrays.html">PercentArrays</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/PredicateName" data-name="ameba::rule::predicatename">
+      <a href="../../Ameba/Rule/PredicateName.html">PredicateName</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/RandZero" data-name="ameba::rule::randzero">
+      <a href="../../Ameba/Rule/RandZero.html">RandZero</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/RedundantBegin" data-name="ameba::rule::redundantbegin">
+      <a href="../../Ameba/Rule/RedundantBegin.html">RedundantBegin</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ShadowedException" data-name="ameba::rule::shadowedexception">
+      <a href="../../Ameba/Rule/ShadowedException.html">ShadowedException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/Syntax" data-name="ameba::rule::syntax">
+      <a href="../../Ameba/Rule/Syntax.html">Syntax</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TrailingBlankLines" data-name="ameba::rule::trailingblanklines">
+      <a href="../../Ameba/Rule/TrailingBlankLines.html">TrailingBlankLines</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TrailingWhitespace" data-name="ameba::rule::trailingwhitespace">
+      <a href="../../Ameba/Rule/TrailingWhitespace.html">TrailingWhitespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TypeNames" data-name="ameba::rule::typenames">
+      <a href="../../Ameba/Rule/TypeNames.html">TypeNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnlessElse" data-name="ameba::rule::unlesselse">
+      <a href="../../Ameba/Rule/UnlessElse.html">UnlessElse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnneededDisableDirective" data-name="ameba::rule::unneededdisabledirective">
+      <a href="../../Ameba/Rule/UnneededDisableDirective.html">UnneededDisableDirective</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnusedArgument" data-name="ameba::rule::unusedargument">
+      <a href="../../Ameba/Rule/UnusedArgument.html">UnusedArgument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UselessAssign" data-name="ameba::rule::uselessassign">
+      <a href="../../Ameba/Rule/UselessAssign.html">UselessAssign</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UselessConditionInWhen" data-name="ameba::rule::uselessconditioninwhen">
+      <a href="../../Ameba/Rule/UselessConditionInWhen.html">UselessConditionInWhen</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/VariableNames" data-name="ameba::rule::variablenames">
+      <a href="../../Ameba/Rule/VariableNames.html">VariableNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/WhileTrue" data-name="ameba::rule::whiletrue">
+      <a href="../../Ameba/Rule/WhileTrue.html">WhileTrue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Runner" data-name="ameba::runner">
+      <a href="../../Ameba/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Source" data-name="ameba::source">
+      <a href="../../Ameba/Source.html">Source</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Source/Error" data-name="ameba::source::error">
+      <a href="../../Ameba/Source/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Tokenizer" data-name="ameba::tokenizer">
+      <a href="../../Ameba/Tokenizer.html">Tokenizer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Crystal" data-name="crystal">
+      <a href="../../Crystal.html">Crystal</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Crystal/Case" data-name="crystal::case">
+      <a href="../../Crystal/Case.html">Case</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Ameba::AST::Branchable
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Ameba/AST/Branchable.html">Ameba::AST::Branchable</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A generic entity to represent a branchable Crystal node.
+For example, <code>Crystal::If</code>, <code>Crystal::Unless</code>, <code>Crystal::While</code>
+are branchable.</p>
+
+<pre><code>white a <span class="o">></span> <span class="n">100</span> <span class="c"># Branchable A</span>
+  <span class="k">if</span> b <span class="o">></span> <span class="n">2</span>    <span class="c"># Branchable B</span>
+    a += <span class="n">1</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L13" target="_blank">ameba/ast/branchable.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28node%2Cparent%3Dnil%29-class-method" class="signature"><strong>.new</strong>(node, parent = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a new branchable</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#branches%3AArray%28Crystal%3A%3AASTNode%29-instance-method" class="signature"><strong>#branches</strong> : Array(Crystal::ASTNode)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#location</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#location</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#loop%3F-instance-method" class="signature"><strong>#loop?</strong></a>
+        
+          <div class="summary"><p>Returns true if this node or one of the parent branchables is a loop, false otherwise.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#node%3ACrystal%3A%3AASTNode-instance-method" class="signature"><strong>#node</strong> : Crystal::ASTNode</a>
+        
+          <div class="summary"><p>The actual Crystal node.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent%3ABranchable%3F-instance-method" class="signature"><strong>#parent</strong> : Branchable?</a>
+        
+          <div class="summary"><p>Parent branchable (if any)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#to_s</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#to_s</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(node,parent=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(node, parent = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28node%2Cparent%3Dnil%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new branchable</p>
+
+<pre><code><span class="t">Branchable</span>.<span class="k">new</span>(node, parent_branchable)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="branches:Array(Crystal::ASTNode)-instance-method">
+      <div class="signature">
+        
+        def <strong>branches</strong> : Array(Crystal::ASTNode)
+
+        <a class="method-permalink" href="#branches%3AArray%28Crystal%3A%3AASTNode%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>location</strong>(*args, **options)
+
+        <a class="method-permalink" href="#location%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>location</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#location%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="loop?-instance-method">
+      <div class="signature">
+        
+        def <strong>loop?</strong>
+
+        <a class="method-permalink" href="#loop%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if this node or one of the parent branchables is a loop, false otherwise.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="node:Crystal::ASTNode-instance-method">
+      <div class="signature">
+        
+        def <strong>node</strong> : Crystal::ASTNode
+
+        <a class="method-permalink" href="#node%3ACrystal%3A%3AASTNode-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The actual Crystal node.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent:Branchable?-instance-method">
+      <div class="signature">
+        
+        def <strong>parent</strong> : <a href="../../Ameba/AST/Branchable.html">Branchable</a>?
+
+        <a class="method-permalink" href="#parent%3ABranchable%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Parent branchable (if any)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(*args, **options)
+
+        <a class="method-permalink" href="#to_s%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#to_s%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/branchable.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

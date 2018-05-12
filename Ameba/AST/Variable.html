@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/veelenga/ameba">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Ameba::AST::Variable - github.com/veelenga/ameba</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/veelenga/ameba/Ameba" data-name="ameba">
+      <a href="../../Ameba.html">Ameba</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/veelenga/ameba/Ameba/AST" data-name="ameba::ast">
+      <a href="../../Ameba/AST.html">AST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Argument" data-name="ameba::ast::argument">
+      <a href="../../Ameba/AST/Argument.html">Argument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Assignment" data-name="ameba::ast::assignment">
+      <a href="../../Ameba/AST/Assignment.html">Assignment</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/BaseVisitor" data-name="ameba::ast::basevisitor">
+      <a href="../../Ameba/AST/BaseVisitor.html">BaseVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Branch" data-name="ameba::ast::branch">
+      <a href="../../Ameba/AST/Branch.html">Branch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Branchable" data-name="ameba::ast::branchable">
+      <a href="../../Ameba/AST/Branchable.html">Branchable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/NodeVisitor" data-name="ameba::ast::nodevisitor">
+      <a href="../../Ameba/AST/NodeVisitor.html">NodeVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Reference" data-name="ameba::ast::reference">
+      <a href="../../Ameba/AST/Reference.html">Reference</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Scope" data-name="ameba::ast::scope">
+      <a href="../../Ameba/AST/Scope.html">Scope</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/ScopeVisitor" data-name="ameba::ast::scopevisitor">
+      <a href="../../Ameba/AST/ScopeVisitor.html">ScopeVisitor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/AST/Util" data-name="ameba::ast::util">
+      <a href="../../Ameba/AST/Util.html">Util</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/veelenga/ameba/Ameba/AST/Variable" data-name="ameba::ast::variable">
+      <a href="../../Ameba/AST/Variable.html">Variable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Config" data-name="ameba::config">
+      <a href="../../Ameba/Config.html">Config</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Formatter" data-name="ameba::formatter">
+      <a href="../../Ameba/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/BaseFormatter" data-name="ameba::formatter::baseformatter">
+      <a href="../../Ameba/Formatter/BaseFormatter.html">BaseFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/DisabledFormatter" data-name="ameba::formatter::disabledformatter">
+      <a href="../../Ameba/Formatter/DisabledFormatter.html">DisabledFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/DotFormatter" data-name="ameba::formatter::dotformatter">
+      <a href="../../Ameba/Formatter/DotFormatter.html">DotFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/FlycheckFormatter" data-name="ameba::formatter::flycheckformatter">
+      <a href="../../Ameba/Formatter/FlycheckFormatter.html">FlycheckFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/JSONFormatter" data-name="ameba::formatter::jsonformatter">
+      <a href="../../Ameba/Formatter/JSONFormatter.html">JSONFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Formatter/TODOFormatter" data-name="ameba::formatter::todoformatter">
+      <a href="../../Ameba/Formatter/TODOFormatter.html">TODOFormatter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/InlineComments" data-name="ameba::inlinecomments">
+      <a href="../../Ameba/InlineComments.html">InlineComments</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Rule" data-name="ameba::rule">
+      <a href="../../Ameba/Rule.html">Rule</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/Base" data-name="ameba::rule::base">
+      <a href="../../Ameba/Rule/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ComparisonToBoolean" data-name="ameba::rule::comparisontoboolean">
+      <a href="../../Ameba/Rule/ComparisonToBoolean.html">ComparisonToBoolean</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ConstantNames" data-name="ameba::rule::constantnames">
+      <a href="../../Ameba/Rule/ConstantNames.html">ConstantNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/DebuggerStatement" data-name="ameba::rule::debuggerstatement">
+      <a href="../../Ameba/Rule/DebuggerStatement.html">DebuggerStatement</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/EmptyEnsure" data-name="ameba::rule::emptyensure">
+      <a href="../../Ameba/Rule/EmptyEnsure.html">EmptyEnsure</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/EmptyExpression" data-name="ameba::rule::emptyexpression">
+      <a href="../../Ameba/Rule/EmptyExpression.html">EmptyExpression</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/HashDuplicatedKey" data-name="ameba::rule::hashduplicatedkey">
+      <a href="../../Ameba/Rule/HashDuplicatedKey.html">HashDuplicatedKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LargeNumbers" data-name="ameba::rule::largenumbers">
+      <a href="../../Ameba/Rule/LargeNumbers.html">LargeNumbers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LineLength" data-name="ameba::rule::linelength">
+      <a href="../../Ameba/Rule/LineLength.html">LineLength</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LiteralInCondition" data-name="ameba::rule::literalincondition">
+      <a href="../../Ameba/Rule/LiteralInCondition.html">LiteralInCondition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/LiteralInInterpolation" data-name="ameba::rule::literalininterpolation">
+      <a href="../../Ameba/Rule/LiteralInInterpolation.html">LiteralInInterpolation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/MethodNames" data-name="ameba::rule::methodnames">
+      <a href="../../Ameba/Rule/MethodNames.html">MethodNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/NegatedConditionsInUnless" data-name="ameba::rule::negatedconditionsinunless">
+      <a href="../../Ameba/Rule/NegatedConditionsInUnless.html">NegatedConditionsInUnless</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/PercentArrays" data-name="ameba::rule::percentarrays">
+      <a href="../../Ameba/Rule/PercentArrays.html">PercentArrays</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/PredicateName" data-name="ameba::rule::predicatename">
+      <a href="../../Ameba/Rule/PredicateName.html">PredicateName</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/RandZero" data-name="ameba::rule::randzero">
+      <a href="../../Ameba/Rule/RandZero.html">RandZero</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/RedundantBegin" data-name="ameba::rule::redundantbegin">
+      <a href="../../Ameba/Rule/RedundantBegin.html">RedundantBegin</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/ShadowedException" data-name="ameba::rule::shadowedexception">
+      <a href="../../Ameba/Rule/ShadowedException.html">ShadowedException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/Syntax" data-name="ameba::rule::syntax">
+      <a href="../../Ameba/Rule/Syntax.html">Syntax</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TrailingBlankLines" data-name="ameba::rule::trailingblanklines">
+      <a href="../../Ameba/Rule/TrailingBlankLines.html">TrailingBlankLines</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TrailingWhitespace" data-name="ameba::rule::trailingwhitespace">
+      <a href="../../Ameba/Rule/TrailingWhitespace.html">TrailingWhitespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/TypeNames" data-name="ameba::rule::typenames">
+      <a href="../../Ameba/Rule/TypeNames.html">TypeNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnlessElse" data-name="ameba::rule::unlesselse">
+      <a href="../../Ameba/Rule/UnlessElse.html">UnlessElse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnneededDisableDirective" data-name="ameba::rule::unneededdisabledirective">
+      <a href="../../Ameba/Rule/UnneededDisableDirective.html">UnneededDisableDirective</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UnusedArgument" data-name="ameba::rule::unusedargument">
+      <a href="../../Ameba/Rule/UnusedArgument.html">UnusedArgument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UselessAssign" data-name="ameba::rule::uselessassign">
+      <a href="../../Ameba/Rule/UselessAssign.html">UselessAssign</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/UselessConditionInWhen" data-name="ameba::rule::uselessconditioninwhen">
+      <a href="../../Ameba/Rule/UselessConditionInWhen.html">UselessConditionInWhen</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/VariableNames" data-name="ameba::rule::variablenames">
+      <a href="../../Ameba/Rule/VariableNames.html">VariableNames</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Rule/WhileTrue" data-name="ameba::rule::whiletrue">
+      <a href="../../Ameba/Rule/WhileTrue.html">WhileTrue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Runner" data-name="ameba::runner">
+      <a href="../../Ameba/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Ameba/Source" data-name="ameba::source">
+      <a href="../../Ameba/Source.html">Source</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Source/Error" data-name="ameba::source::error">
+      <a href="../../Ameba/Source/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Ameba/Tokenizer" data-name="ameba::tokenizer">
+      <a href="../../Ameba/Tokenizer.html">Tokenizer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/veelenga/ameba/Crystal" data-name="crystal">
+      <a href="../../Crystal.html">Crystal</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/veelenga/ameba/Crystal/Case" data-name="crystal::case">
+      <a href="../../Crystal/Case.html">Case</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Ameba::AST::Variable
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Ameba/AST/Variable.html">Ameba::AST::Variable</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Represents the existence of the local variable.
+Holds the var node and variable assigments.</p>
+
+
+
+
+
+
+
+
+
+  <h2>Direct Known Subclasses</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Ameba/AST/Reference.html">Ameba::AST::Reference</a></li>
+  
+  </ul>
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L4" target="_blank">ameba/ast/variabling/variable.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28node%2Cscope%29-class-method" class="signature"><strong>.new</strong>(node, scope)</a>
+        
+          <div class="summary"><p>Creates a new variable(in the scope).</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#assign%28node%29-instance-method" class="signature"><strong>#assign</strong>(node)</a>
+        
+          <div class="summary"><p>Assigns the variable (creates a new assignment).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#assignments%3AArray%28Ameba%3A%3AAST%3A%3AAssignment%29-instance-method" class="signature"><strong>#assignments</strong> : Array(Ameba::AST::Assignment)</a>
+        
+          <div class="summary"><p>List of the assigments of this variable.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#captured_by_block%3F%28scope%3D%40scope%29-instance-method" class="signature"><strong>#captured_by_block?</strong>(scope = @scope)</a>
+        
+          <div class="summary"><p>Returns true if the current var is referenced in in the block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#eql%3F%28node%29-instance-method" class="signature"><strong>#eql?</strong>(node)</a>
+        
+          <div class="summary"><p>Returns true if the <code><a href="../../Ameba/AST/Variable.html#node%3ACrystal%3A%3AVar-instance-method">#node</a></code> represents exactly the same Crystal node as <code>@node</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#location</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#location</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#name</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#name</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#node%3ACrystal%3A%3AVar-instance-method" class="signature"><strong>#node</strong> : Crystal::Var</a>
+        
+          <div class="summary"><p>The actual var node.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reference%28node%3ACrystal%3A%3AVar%2Cscope%3AScope%29-instance-method" class="signature"><strong>#reference</strong>(node : Crystal::Var, scope : Scope)</a>
+        
+          <div class="summary"><p>Creates a reference to this variable in some scope.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reference_assignments%21-instance-method" class="signature"><strong>#reference_assignments!</strong></a>
+        
+          <div class="summary"><p>Reference variable's assignments.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#referenced%3F-instance-method" class="signature"><strong>#referenced?</strong></a>
+        
+          <div class="summary"><p>Returns true if variable has any reference.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#references%3AArray%28Ameba%3A%3AAST%3A%3AReference%29-instance-method" class="signature"><strong>#references</strong> : Array(Ameba::AST::Reference)</a>
+        
+          <div class="summary"><p>List of the references of this variable.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scope%3AScope-instance-method" class="signature"><strong>#scope</strong> : Scope</a>
+        
+          <div class="summary"><p>Scope of this variable.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#special%3F-instance-method" class="signature"><strong>#special?</strong></a>
+        
+          <div class="summary"><p>Returns true if it is a special variable, i.e <code>$?</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#target_of%3F%28assign%29-instance-method" class="signature"><strong>#target_of?</strong>(assign)</a>
+        
+          <div class="summary"><p>Returns true if the variable is a target (on the left) of the assignment, false otherwise.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#to_s</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#to_s</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#used_in_macro%3F%28scope%3D%40scope%29-instance-method" class="signature"><strong>#used_in_macro?</strong>(scope = @scope)</a>
+        
+          <div class="summary"><p>Returns true if current variable potentially referenced in a macro literal, false if not.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(node,scope)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(node, scope)
+
+        <a class="method-permalink" href="#new%28node%2Cscope%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new variable(in the scope).</p>
+
+<pre><code><span class="t">Variable</span>.<span class="k">new</span>(node, scope)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="assign(node)-instance-method">
+      <div class="signature">
+        
+        def <strong>assign</strong>(node)
+
+        <a class="method-permalink" href="#assign%28node%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Assigns the variable (creates a new assignment).
+Variable may have multiple assignments.</p>
+
+<pre><code>variable <span class="o">=</span> <span class="t">Variable</span>.<span class="k">new</span>(node, scope)
+variable.assign(node1)
+variable.assign(node2)
+variable.assignment.size <span class="c"># =&gt; 2</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="assignments:Array(Ameba::AST::Assignment)-instance-method">
+      <div class="signature">
+        
+        def <strong>assignments</strong> : Array(<a href="../../Ameba/AST/Assignment.html">Ameba::AST::Assignment</a>)
+
+        <a class="method-permalink" href="#assignments%3AArray%28Ameba%3A%3AAST%3A%3AAssignment%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>List of the assigments of this variable.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="captured_by_block?(scope=@scope)-instance-method">
+      <div class="signature">
+        
+        def <strong>captured_by_block?</strong>(scope = @scope)
+
+        <a class="method-permalink" href="#captured_by_block%3F%28scope%3D%40scope%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if the current var is referenced in
+in the block. For example this variable is captured
+by block:</p>
+
+<pre><code>a <span class="o">=</span> <span class="n">1</span>
+<span class="n">3</span>.times { <span class="o">|</span>i<span class="o">|</span> a <span class="o">=</span> a <span class="o">+</span> i }</code></pre>
+
+<p>And this variable is not captured by block.</p>
+
+<pre><code>i <span class="o">=</span> <span class="n">1</span>
+<span class="n">3</span>.times { <span class="o">|</span>i<span class="o">|</span> i <span class="o">+</span> <span class="n">1</span> }</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="eql?(node)-instance-method">
+      <div class="signature">
+        
+        def <strong>eql?</strong>(node)
+
+        <a class="method-permalink" href="#eql%3F%28node%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if the <code><a href="../../Ameba/AST/Variable.html#node%3ACrystal%3A%3AVar-instance-method">#node</a></code> represents exactly
+the same Crystal node as <code>@node</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>location</strong>(*args, **options)
+
+        <a class="method-permalink" href="#location%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>location</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#location%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong>(*args, **options)
+
+        <a class="method-permalink" href="#name%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#name%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="node:Crystal::Var-instance-method">
+      <div class="signature">
+        
+        def <strong>node</strong> : Crystal::Var
+
+        <a class="method-permalink" href="#node%3ACrystal%3A%3AVar-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The actual var node.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reference(node:Crystal::Var,scope:Scope)-instance-method">
+      <div class="signature">
+        
+        def <strong>reference</strong>(node : Crystal::Var, scope : <a href="../../Ameba/AST/Scope.html">Scope</a>)
+
+        <a class="method-permalink" href="#reference%28node%3ACrystal%3A%3AVar%2Cscope%3AScope%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a reference to this variable in some scope.</p>
+
+<pre><code>variable <span class="o">=</span> <span class="t">Variable</span>.<span class="k">new</span>(node, scope)
+variable.reference(var_node, some_scope)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reference_assignments!-instance-method">
+      <div class="signature">
+        
+        def <strong>reference_assignments!</strong>
+
+        <a class="method-permalink" href="#reference_assignments%21-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Reference variable's assignments.</p>
+
+<pre><code>variable <span class="o">=</span> <span class="t">Variable</span>.<span class="k">new</span>(node, scope)
+variable.assign(assign_node)
+variable.reference_assignments!</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="referenced?-instance-method">
+      <div class="signature">
+        
+        def <strong>referenced?</strong>
+
+        <a class="method-permalink" href="#referenced%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if variable has any reference.</p>
+
+<pre><code>variable <span class="o">=</span> <span class="t">Variable</span>.<span class="k">new</span>(node, scope)
+variable.reference(var_node)
+variable.referenced? <span class="c"># =&gt; true</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="references:Array(Ameba::AST::Reference)-instance-method">
+      <div class="signature">
+        
+        def <strong>references</strong> : Array(<a href="../../Ameba/AST/Reference.html">Ameba::AST::Reference</a>)
+
+        <a class="method-permalink" href="#references%3AArray%28Ameba%3A%3AAST%3A%3AReference%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>List of the references of this variable.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scope:Scope-instance-method">
+      <div class="signature">
+        
+        def <strong>scope</strong> : <a href="../../Ameba/AST/Scope.html">Scope</a>
+
+        <a class="method-permalink" href="#scope%3AScope-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Scope of this variable.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="special?-instance-method">
+      <div class="signature">
+        
+        def <strong>special?</strong>
+
+        <a class="method-permalink" href="#special%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if it is a special variable, i.e <code>$?</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="target_of?(assign)-instance-method">
+      <div class="signature">
+        
+        def <strong>target_of?</strong>(assign)
+
+        <a class="method-permalink" href="#target_of%3F%28assign%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if the variable is a target (on the left) of the assignment,
+false otherwise.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L128" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(*args, **options)
+
+        <a class="method-permalink" href="#to_s%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#to_s%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="used_in_macro?(scope=@scope)-instance-method">
+      <div class="signature">
+        
+        def <strong>used_in_macro?</strong>(scope = @scope)
+
+        <a class="method-permalink" href="#used_in_macro%3F%28scope%3D%40scope%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns true if current variable potentially referenced in a macro literal,
+false if not.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/veelenga/ameba/blob/bf907ee98b868506438fe39dc6838d0e7021566c/src/ameba/ast/variabling/variable.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
